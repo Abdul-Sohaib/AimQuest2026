@@ -27,11 +27,11 @@ const cardAnimation={
   }),
 };
 
-const Team = () => {
-  const [selectedEvent, setSelectedEvent] = useState(null);
+const Team=()=>{
+  const [selectedEvent, setSelectedEvent]=useState(null);
 
-  const handleEventClick = (event) => {
-    setSelectedEvent(selectedEvent?.id === event.id ? null : event);
+  const handleEventClick=(event)=>{
+    setSelectedEvent(selectedEvent?.id===event.id?null:event);
   };
 
   return (
