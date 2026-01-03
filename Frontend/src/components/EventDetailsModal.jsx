@@ -34,18 +34,18 @@ const EventDetailsModal=({event,onClose})=>{
             onClick={onClose}
           />
           <motion.div
-            className="fixed inset-0 z-50 flex items-center justify-center p-4"
+            className="fixed inset-0 z-50 flex items-center justify-center"
             initial={{scale:0.8,opacity:0}}
             animate={{scale:1,opacity:1}}
             exit={ {scale:0.8,opacity:0}}
           >
             <div
               onClick={(e)=>e.stopPropagation()}
-              className="bg-gradient-to-b from-black to-[#090C1F] text-white lg:w-full md:max-w-2xl rounded-2xl p-8 max-h-[90vh] overflow-y-auto hide-scrollbar border border-white/30 shadow-2xl"
+              className="bg-gradient-to-b from-black to-[#090C1F] text-white lg:w-screen md:w-screen p-8 max-h-screen overflow-y-auto hide-scrollbar border border-white/30 shadow-2xl"
             >
               <button
                 onClick={onClose}
-                className="absolute lg:top-14 lg:right-[29rem] md:top-10 md:right-14 xs:top-10 xs:right-8 text-3xl hover:text-red-600 transition-colors"
+                className="absolute lg:top-6 lg:right-3 md:top-10 md:right-14 xs:top-10 xs:right-8 text-3xl hover:text-red-600 transition-colors"
               >
                 <IoClose />
               </button>

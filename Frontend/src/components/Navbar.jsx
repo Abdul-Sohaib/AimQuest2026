@@ -126,7 +126,7 @@ const Navbar = () => {
               animate="open"
               exit="closed"
               onClick={closeMenu}
-              className="fixed inset-0 bg-black/60 backdrop-blur-sm z-40 sm:hidden"
+              className="fixed inset-0 bg-black/60 backdrop-blur-sm z-10 sm:hidden"
             />
 
             {/* Slide-in Menu */}

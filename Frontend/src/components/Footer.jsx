@@ -13,9 +13,9 @@ const Footer=()=>{
             <div className="flex items-center gap-3 w-full">
               {/* Placeholder for logo image */}
               <div className='relative ' >
-                <img src={AimQuestLogo} alt="" className='lg:w-60 md:w-52 xs:w-40 flex rounded-md bg-transparent'/>
+                <img src={AimQuestLogo} alt="" className='lg:w-32 md:w-52 xs:w-40 flex rounded-md bg-transparent'/>
               </div>
-              <div className='relative right-10 xs:right-1 flex flex-col gap-2 xs:gap-6'>
+              <div className='relative flex flex-col gap-2 xs:gap-6'>
                 <p className="lg:text-sm md:text-sm xs:text-xs text-white navfonts tracking-wide">AIM BORAGAON, GUWAHATI</p>
                 <h2 className="lg:text-5xl md:text-4xl xs:text-2xl font-bold Amoriafont tracking-wider">AIMQUEST</h2>
                 <p className="lg:text-xl md:text-lg xs:text-sm font-semibold absolute right-[-1rem] xs:right-2 lg:bottom-9 md:bottom-6 xs:bottom-6 rotate-12">2026</p>

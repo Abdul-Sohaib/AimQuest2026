@@ -1,23 +1,22 @@
-import {React, useState} from 'react'
-import sketchline1 from "../assets/sketchline1.svg";
+import {React, useState} from 'react';
 import { GoArrowRight } from "react-icons/go";
 // eslint-disable-next-line no-unused-vars
 import { motion } from 'framer-motion';
 import EventDetailsModal from './EventDetailsModal';
 import {eventsData} from '../data/eventsData'
 
-const fadeanimation = {
-  hidden: { opacity: 0, y: 30 },
-  visible: { opacity: 1, y: 0, transition: { duration: 0.6, ease: "easeOut" } },
+const fadeanimation={
+  hidden:{ opacity: 0, y: 30 },
+  visible:{ opacity: 1, y: 0, transition: { duration: 0.6, ease: "easeOut" } },
 };
 
-const cardVariants = {
-  hidden: {
+const cardVariants={
+  hidden:{
     opacity: 0,
     scale: 0.8,
     y: 20,
   },
-  visible: (i) => ({
+  visible:(i)=>({
     opacity: 1,
     scale: 1,
     y: 0,
@@ -29,23 +28,23 @@ const cardVariants = {
   }),
 };
 
-const hoverVariants = {
-  hover: {
-    scale: 1.05,
-    y: -5,
-    transition: {
-      duration: 0.3,
-      ease: "easeOut",
+const hoverVariants={
+  hover:{
+    scale:1.05,
+    y:-5,
+    transition:{
+      duration:0.3,
+      ease:"easeOut",
     },
   },
 };
 
-const Events = () => {
-  const [activeevents, setactiveevents] = useState(null);
+const Events=()=>{
+  const [activeevents, setactiveevents]=useState(null);
   
   // Split events into two groups - left (first 4) and right (last 4)
-  const leftEvents = eventsData.slice(0, 4);
-  const rightEvents = eventsData.slice(4, 8);
+  const leftEvents=eventsData.slice(0, 4);
+  const rightEvents=eventsData.slice(4, 8);
 
   return (
     <>
@@ -54,7 +53,7 @@ const Events = () => {
           
           {/* Left Grid - 2x2 */}
           <div className='grid grid-cols-2 xs:grid-cols-1 gap-4 lg:gap-6'>
-            {leftEvents.map((event, index) => (
+            {leftEvents.map((event, index)=>(
               <motion.div
                 key={event.id}
                 custom={index}
@@ -88,10 +87,9 @@ const Events = () => {
             transition={{ duration: 0.6, ease: "easeOut" }}
             viewport={{ once: false, amount: 0.5 }}
           >
-            <span className='text-5xl lg:text-7xl md:text-6xl xs:text-4xl text-white text-center Amoriafont tracking-wide whitespace-nowrap'>
+            <span className='text-5xl lg:text-7xl md:text-6xl z-40 xs:text-4xl text-white text-center Amoriafont tracking-wide whitespace-nowrap'>
               Events
             </span>
-            <img src={sketchline1} alt="" className='w-[10rem] lg:w-[15rem] md:w-[12rem] xs:w-[10rem] mt-2' />
           </motion.div>
 
           {/* Right Grid - 2x2 */}
@@ -125,7 +123,7 @@ const Events = () => {
       
       <EventDetailsModal
         event={activeevents}
-        onClose={() => setactiveevents(null)}
+        onClose={()=>setactiveevents(null)}
       />
     </>
   )
