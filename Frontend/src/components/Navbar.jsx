@@ -75,7 +75,7 @@ const Navbar = () => {
     <nav className="fixed top-0 left-0 w-full z-50 bg-transparent">
       <div className="lg:max-w-7xl md:max-w-fit mx-auto py-3 flex items-center justify-center border-b border-white bg-black/20 backdrop-blur-md rounded-md">
         {/* Desktop Navigation */}
-        <div className="hidden sm:flex items-center w-full lg:justify-around md:gap-10 md:px-4 text-white navfonts tracking-wide lg:text-lg md:text-sm">
+        <div className="hidden sm:flex items-center w-full lg:justify-around md:gap-10 md:px-4 text-white navfonts tracking-wide lg:text-lg md:text-sm menu">
           <a href="#About" className="nav-link">About</a>
           <a href="#Events" className="nav-link">Events</a>
           <a href="#Register" className="nav-link">Register</a>
