@@ -1,27 +1,23 @@
 import React from 'react';
 import { Instagram, Linkedin, Facebook } from 'lucide-react';
-import AimQuestLogo from "../assets/AimQuest-Logo.png";
+import AimQuestposter from "../assets/poster_aimquest.jpg";
 
 const Footer=()=>{
   return (
-    <footer className="bg-[#020202] text-white p-6 h-full">
+    <footer className="bg-gradient-to-t from-[#0a192f] via-[#112240] to-[#233554]
+ text-white p-6 h-full">
       <div className="max-w-full mx-auto border-b-2 border-white">
-        <div className="flex xs:flex-col flex-1 gap-8 justify-around ">
+        <div className="flex xs:flex-col flex-1 justify-center items-center gap-20">
           
           {/* Logo and Location Section */}
-          <div className="space-y-10 flex flex-col h-full items-center justify-around">
+          <div className=" flex h-full items-center justify-center">
             <div className="flex items-center gap-3 w-full">
               {/* Placeholder for logo image */}
-              <div className='relative ' >
-                <img src={AimQuestLogo} alt="" className='lg:w-32 md:w-52 xs:w-40 flex rounded-md bg-transparent'/>
-              </div>
-              <div className='relative flex flex-col gap-2 xs:gap-6'>
-                <p className="lg:text-sm md:text-sm xs:text-xs text-white navfonts tracking-wide">AIM BORAGAON, GUWAHATI</p>
-                <h2 className="lg:text-5xl md:text-4xl xs:text-2xl font-bold Amoriafont tracking-wider">AIMQUEST</h2>
-                <p className="lg:text-xl md:text-lg xs:text-sm font-semibold absolute right-[-1rem] xs:right-2 lg:bottom-9 md:bottom-6 xs:bottom-6 rotate-12">2026</p>
+              <div className='mb-5 ' >
+                <img src={AimQuestposter} alt="" className='lg:w-72 md:w-52 xs:w-40 flex rounded-md bg-transparent'/>
               </div>
             </div>
-            <div className="flex gap-10 pt-7 items-center justify-evenly">
+            <div className="flex gap-10  items-center justify-between w-full rotate-90">
               <a href="#instagram" className="hover:text-pink-500 transition-colors" aria-label="Instagram">
                 <Instagram size={24} />
               </a>

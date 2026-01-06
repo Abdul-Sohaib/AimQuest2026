@@ -67,7 +67,8 @@ const fadeanimation3={
 const About = () => {
   return (
     <>
-    <section id='About' className='min-h-screen w-full bg-[#202020] flex justify-center'>
+    <section id='About' className='min-h-screen w-full bg-gradient-to-t from-[#0a192f] via-[#112240] to-[#233554]
+ flex justify-center'>
         <div className='flex flex-col justify-center items-center'>
  
         <div className='w-full flex xs:flex-col flex-1 justify-center items-center gap-32 xs:gap-20 px-10'>

@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import AimquestLogo from "../assets/AimQuest-Logo.png";
 // eslint-disable-next-line no-unused-vars
 import { motion, AnimatePresence } from "framer-motion";
@@ -7,6 +7,29 @@ import { IoClose } from "react-icons/io5";
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
+  const [isVisible, setIsVisible] = useState(true);
+  const [lastScrollY, setLastScrollY] = useState(0);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      const currentScrollY = window.scrollY;
+      
+      // Show navbar when scrolling up or at the top
+      if (currentScrollY < lastScrollY || currentScrollY < 10) {
+        setIsVisible(true);
+      } 
+      // Hide navbar when scrolling down (and not at the top)
+      else if (currentScrollY > lastScrollY && currentScrollY > 100) {
+        setIsVisible(false);
+      }
+      
+      setLastScrollY(currentScrollY);
+    };
+
+    window.addEventListener("scroll", handleScroll, { passive: true });
+    
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, [lastScrollY]);
 
   const toggleMenu = () => {
     setIsOpen(!isOpen);
@@ -14,6 +37,29 @@ const Navbar = () => {
 
   const closeMenu = () => {
     setIsOpen(false);
+  };
+
+  const navbarVariants = {
+    visible: {
+      y: 0,
+      opacity: 1,
+      transition: {
+        type: "spring",
+        stiffness: 300,
+        damping: 30,
+        opacity: { duration: 0.3 }
+      }
+    },
+    hidden: {
+      y: -100,
+      opacity: 0,
+      transition: {
+        type: "spring",
+        stiffness: 300,
+        damping: 30,
+        opacity: { duration: 0.2 }
+      }
+    }
   };
 
   const menuVariants = {
@@ -72,7 +118,12 @@ const Navbar = () => {
   ];
 
   return (
-    <nav className="fixed top-0 left-0 w-full z-50 bg-transparent">
+    <motion.nav 
+      className="fixed top-0 left-0 w-full z-50 bg-transparent"
+      variants={navbarVariants}
+      animate={isVisible ? "visible" : "hidden"}
+      initial="visible"
+    >
       <div className="lg:max-w-7xl md:max-w-fit mx-auto py-3 flex items-center justify-center border-b border-white bg-black/20 backdrop-blur-md rounded-md">
         {/* Desktop Navigation */}
         <div className="hidden sm:flex items-center w-full lg:justify-around md:gap-10 md:px-4 text-white navfonts tracking-wide lg:text-lg md:text-sm menu">
@@ -158,7 +209,7 @@ const Navbar = () => {
           </>
         )}
       </AnimatePresence>
-    </nav>
+    </motion.nav>
   );
 };
 
