@@ -35,7 +35,7 @@ const Team=()=>{
   };
 
   return (
-    <section id="Team" className="min-h-screen w-full bg-[#202020] py-20 px-6">
+    <section id="Team" className="min-h-screen w-full bg-gradient-to-b from-slate-950 to-slate-900 py-20 px-6">
       <div className="max-w-7xl mx-auto">
         {/* Section Header */}
         <motion.div

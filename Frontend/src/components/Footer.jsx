@@ -4,20 +4,19 @@ import AimQuestposter from "../assets/poster_aimquest.jpg";
 
 const Footer=()=>{
   return (
-    <footer className="bg-gradient-to-t from-[#0a192f] via-[#112240] to-[#233554]
- text-white p-6 h-full">
+    <footer className="bg-gradient-to-b from-slate-950 to-slate-900 text-white p-6 h-full">
       <div className="max-w-full mx-auto border-b-2 border-white">
         <div className="flex xs:flex-col flex-1 justify-center items-center gap-20">
           
           {/* Logo and Location Section */}
-          <div className=" flex h-full items-center justify-center">
+          <div className=" flex flex-col h-full items-center justify-center">
             <div className="flex items-center gap-3 w-full">
               {/* Placeholder for logo image */}
               <div className='mb-5 ' >
                 <img src={AimQuestposter} alt="" className='lg:w-72 md:w-52 xs:w-40 flex rounded-md bg-transparent'/>
               </div>
             </div>
-            <div className="flex gap-10  items-center justify-between w-full rotate-90">
+            <div className="flex gap-10  items-center justify-between w-full mb-6">
               <a href="#instagram" className="hover:text-pink-500 transition-colors" aria-label="Instagram">
                 <Instagram size={24} />
               </a>
@@ -30,7 +29,7 @@ const Footer=()=>{
             </div>
            
           </div>
-          <div className='flex lg:flex-row md:flex-col xs:flex-col md:gap-6 lg:gap-20 xs:gap-6 mb-10'>
+          <div className='flex lg:flex-row md:flex-col xs:flex-col md:gap-6 lg:gap-20 xs:gap-6 mb-10 w-full'>
              <div className='flex flex-col w-full justify-center items-center xs:gap-4'>
             <span className='xs:text-sm w-full items-center justify-center text-center  underline'>Quick links</span>
           <nav className="flex flex-col lg:text-lg md:text-lg xs:gap-4 w-full text-left justify-around items-center navfonts tracking-wide gap-3 mt-5">

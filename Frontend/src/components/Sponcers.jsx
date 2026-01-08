@@ -7,6 +7,8 @@ import sponcer5 from "../assets/the_highlander.jpeg";
 import sponcer6 from "../assets/the_nakhyatra.jpeg";
 import sponcer7 from "../assets/unionbank.png";
 import sponcer8 from "../assets/xamtech.png";
+// eslint-disable-next-line no-unused-vars
+import { motion } from "framer-motion";
 
 const Sponsors=()=>{
   const sponsors=[
@@ -22,6 +24,15 @@ const Sponsors=()=>{
 
   const scrollRef=useRef(null);
   const animationRef=useRef(null);
+  const fadeAnimation={
+  hidden:{ opacity: 0, y: 30 },
+  visible:{
+    opacity: 1,
+    y: 0,
+    transition:{ duration: 0.6, ease: "easeOut" },
+  },
+};
+
 
   useEffect(()=>{
     const scrollContainer=scrollRef.current;
@@ -70,12 +81,18 @@ const Sponsors=()=>{
   return (
     <section 
       id='Sponcers' 
-      className='min-h-[60vh] w-full bg-[#020202] flex justify-center items-center'
-    >
+      className='min-h-[60vh] w-full bg-[#0B0B0B] flex justify-center items-center'>
       <div className='flex flex-col w-full max-w-7xl px-4 h-80 justify-center items-center'>
+        <motion.h1
+         className='text-white font-bold  Amoriafont tracking-wider text-5xl mb-10'
+          variants={fadeAnimation}
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: false, amount: 0.3 }}
+         >Sponcered By</motion.h1>
         <div className='relative w-full h-full flex overflow-hidden justify-center items-center'>
-          <div className='absolute left-0 top-0 bottom-0 w-32 bg-gradient-to-r from-[#020202] to-transparent z-10 pointer-events-none'></div>
-          <div className='absolute right-0 top-0 bottom-0 w-32 bg-gradient-to-l from-[#020202] to-transparent z-10 pointer-events-none'></div>
+          <div className='absolute left-0 top-0 bottom-0 w-32 bg-gradient-to-r from-[#0B0B0B] to-transparent z-10 pointer-events-none'></div>
+          <div className='absolute right-0 top-0 bottom-0 w-32 bg-gradient-to-l from-[#0B0B0B] to-transparent z-10 pointer-events-none'></div>
           
           <div 
             ref={scrollRef} 
